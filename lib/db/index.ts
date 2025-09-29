@@ -8,6 +8,8 @@ const authToken = process.env.TURSO_AUTH_TOKEN || "eyJhbGciOiJFZERTQSIsInR5cCI6I
 const client = createClient({
   url: databaseUrl,
   authToken: authToken,
+  syncUrl: databaseUrl,
+  syncInterval: 0,
 });
 
 export const db = drizzle(client);
