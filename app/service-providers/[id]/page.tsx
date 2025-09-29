@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getServiceProviderById } from "@/lib/db/queries";
 
+export const dynamic = 'force-dynamic';
+
 interface ServiceProviderDetailPageProps {
   params: Promise<{ id: string }>;
 }

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { ServiceProviderForm } from "@/components/service-provider-form";
 import { getServiceProviderById } from "@/lib/db/queries";
 
+export const dynamic = 'force-dynamic';
+
 interface EditServiceProviderPageProps {
   params: Promise<{ id: string }>;
 }
