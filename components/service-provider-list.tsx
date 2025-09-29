@@ -43,7 +43,7 @@ export function ServiceProviderList({ serviceProviders }: ServiceProviderListPro
       <div className="text-center py-12">
         <h3 className="text-lg font-semibold mb-2">No Service Providers Found</h3>
         <p className="text-muted-foreground mb-4">
-          You haven't added any service providers yet. Get started by creating your first one.
+          You haven&apos;t added any service providers yet. Get started by creating your first one.
         </p>
         <Button asChild>
           <Link href="/service-providers/new">Add Service Provider</Link>

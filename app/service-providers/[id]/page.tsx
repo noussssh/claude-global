@@ -6,11 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { getServiceProviderById } from "@/lib/db/queries";
 
 interface ServiceProviderDetailPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ServiceProviderDetailPage({ params }: ServiceProviderDetailPageProps) {
-  const serviceProvider = await getServiceProviderById(parseInt(params.id));
+  const { id } = await params;
+  const serviceProvider = await getServiceProviderById(parseInt(id));
 
   if (!serviceProvider) {
     notFound();

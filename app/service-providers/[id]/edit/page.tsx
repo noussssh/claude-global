@@ -3,11 +3,12 @@ import { ServiceProviderForm } from "@/components/service-provider-form";
 import { getServiceProviderById } from "@/lib/db/queries";
 
 interface EditServiceProviderPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function EditServiceProviderPage({ params }: EditServiceProviderPageProps) {
-  const serviceProvider = await getServiceProviderById(parseInt(params.id));
+  const { id } = await params;
+  const serviceProvider = await getServiceProviderById(parseInt(id));
 
   if (!serviceProvider) {
     notFound();
