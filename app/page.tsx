@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
             <Badge variant="secondary">shadcn/ui</Badge>
             <Badge variant="outline">TypeScript</Badge>
             <Badge variant="destructive">Tailwind CSS</Badge>
+            <Badge variant="default">Drizzle ORM</Badge>
+            <Badge variant="secondary">Turso</Badge>
           </div>
         </div>
 
@@ -27,20 +30,22 @@ export default function Home() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                🚀 Fast Development
+                🏢 Service Providers
                 <Badge variant="secondary">New</Badge>
               </CardTitle>
               <CardDescription>
-                Build modern web applications with incredible speed using Next.js and shadcn/ui
+                Manage your service providers with full CRUD functionality using Drizzle ORM and Turso
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                Complete service provider management system with create, read, update, and delete operations. Store contact details, location coordinates, and payment terms.
               </p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" size="sm">Learn More</Button>
+              <Button variant="outline" size="sm" asChild>
+                <Link href="/service-providers">View Providers</Link>
+              </Button>
             </CardFooter>
           </Card>
 
@@ -89,17 +94,14 @@ export default function Home() {
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-6">Ready to get started?</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg">
-              Primary Action
+            <Button size="lg" asChild>
+              <Link href="/service-providers">View Service Providers</Link>
             </Button>
-            <Button variant="outline" size="lg">
-              Secondary Action
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/service-providers/new">Add New Provider</Link>
             </Button>
             <Button variant="ghost" size="lg">
               Learn More
-            </Button>
-            <Button variant="destructive" size="lg">
-              Delete Something
             </Button>
           </div>
         </div>
